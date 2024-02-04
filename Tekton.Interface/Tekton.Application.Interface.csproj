@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tekon.DTO\Tekon.Application.DTO.csproj" />
+    <ProjectReference Include="..\Tekton.Domain\Tekton.Domain.csproj" />
+    <ProjectReference Include="..\Tekton.Transversal.Common\Tekton.Transversal.Common.csproj" />
+  </ItemGroup>
+
+</Project>
