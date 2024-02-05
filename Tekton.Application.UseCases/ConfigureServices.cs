@@ -1,13 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Tekton.Application.Interface.UseCases;
-using Tekton.Application.UseCases.Products;
-using Tekton.Application.Validator;
+using Tekton.Application.UseCases.Common.Behaviors;
 
 namespace Tekton.Application.UseCases
 {
@@ -15,10 +9,12 @@ namespace Tekton.Application.UseCases
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
+            services.AddMediatR(cfg => {
+                cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+                cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+                cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            });
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddScoped<IProductApplication, ProductApplication>();
-
-            services.AddTransient<ProductDtoValidator>();
 
             return services;
         }

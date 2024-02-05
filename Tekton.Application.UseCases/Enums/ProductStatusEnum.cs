@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tekon.Application.DTO.Enums
+namespace Tekton.Application.UseCases.Enums
 {
-    public enum ProductStatusDto
+    public enum ProductStatusEnum
     {
         Inactive = 0,
         Active = 1

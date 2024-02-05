@@ -19,9 +19,10 @@ namespace Tekton.Persistence
         {
             services.AddScoped<AuditableEntitySaveChangesInterceptor>();
             services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(configuration.GetConnectionString("NorthwindConnection"),
+                    options.UseSqlServer(configuration.GetConnectionString("TektonDBConnection"),
                     builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
+            services.AddLazyCache();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProductRepository, ProductRepository>();
             return services;

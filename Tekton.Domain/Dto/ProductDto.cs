@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tekon.Application.DTO
+namespace Tekton.Domain.Dto
 {
-    public record ProductDto
+    public class ProductDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,5 +14,7 @@ namespace Tekon.Application.DTO
         public int Stock { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+        public int Discount { get; set; }
+        public decimal FinalPrice { get; set;}
     }
 }

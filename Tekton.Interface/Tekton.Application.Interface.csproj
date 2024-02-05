@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tekon.DTO\Tekon.Application.DTO.csproj" />
     <ProjectReference Include="..\Tekton.Domain\Tekton.Domain.csproj" />
     <ProjectReference Include="..\Tekton.Transversal.Common\Tekton.Transversal.Common.csproj" />
   </ItemGroup>
