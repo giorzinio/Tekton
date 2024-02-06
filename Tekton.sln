@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tekton.Transversal.Common",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tekton.Application.UseCases", "Tekton.Application.UseCases\Tekton.Application.UseCases.csproj", "{29BB3363-9ECD-4133-A166-AB1F5EDBEA6C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prueba", "Prueba", "{C55F2812-EA92-4F25-8ACE-F87226BC5FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tekton.Application.TestUnit", "Tekton.Application.TestUnit\Tekton.Application.TestUnit.csproj", "{9BCBC8DE-5029-40D2-BD60-433C1D09776D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,10 @@ Global
 		{29BB3363-9ECD-4133-A166-AB1F5EDBEA6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29BB3363-9ECD-4133-A166-AB1F5EDBEA6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29BB3363-9ECD-4133-A166-AB1F5EDBEA6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BCBC8DE-5029-40D2-BD60-433C1D09776D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BCBC8DE-5029-40D2-BD60-433C1D09776D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BCBC8DE-5029-40D2-BD60-433C1D09776D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BCBC8DE-5029-40D2-BD60-433C1D09776D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +74,7 @@ Global
 		{96685A15-433A-4632-9A80-C954C1C59814} = {D3AF49A1-F080-416F-9481-A2B0DF22D475}
 		{C52386CD-CAF4-4F88-9389-2666680947FD} = {3F00134F-F58F-47EA-928B-D49E44C97F83}
 		{29BB3363-9ECD-4133-A166-AB1F5EDBEA6C} = {D3AF49A1-F080-416F-9481-A2B0DF22D475}
+		{9BCBC8DE-5029-40D2-BD60-433C1D09776D} = {C55F2812-EA92-4F25-8ACE-F87226BC5FB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2449E92-26EA-4E18-821B-30CE8D701218}

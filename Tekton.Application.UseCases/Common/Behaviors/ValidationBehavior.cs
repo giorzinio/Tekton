@@ -16,22 +16,14 @@ namespace Tekton.Application.UseCases.Common.Behaviors
             }
             var context = new ValidationContext<TRequest>(request);
 
-            var errorsDictionary = _validators
-                .Select(x => x.Validate(context))
-                .SelectMany(x => x.Errors)
-                .Where(x => x != null)
-                .GroupBy(
-                    x => x.PropertyName,
-                    x => x.ErrorMessage,
-                    (propertyName, errorMessages) => new
-                    {
-                        Key = propertyName,
-                        Values = errorMessages.Distinct().ToArray()
-                    })
-                .ToDictionary(x => x.Key, x => x.Values);
-            if (errorsDictionary.Any())
+            var validationResults = await Task.WhenAll(_validators.Select(v =>
+            v.ValidateAsync(context, cancellationToken)));
+            var failures = validationResults.SelectMany(r => r.Errors).Where(f => f
+                       != null).ToList();
+
+            if (failures.Any())
             {
-                throw new Exceptions.ValidationException(errorsDictionary);
+                throw new ValidationException(failures);
             }
 
             return await next();

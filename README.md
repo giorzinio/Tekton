@@ -47,10 +47,27 @@ El propósito de utilizar este pátron sera de separar las operaciones de lectur
 ### Pátron MediatR
 Servira en el proyecto para la comunicación entre componentes, este pátrton nos proporciona un canal de comunicación centralizado.
 
+### Pipeline Behavior in MediatR
+Nos servira para implementar las validaciones y loggins como el tiempo de ejecucion que demora en procesar un handler a travez de MediatR.
+
+![Pipeline Behavior](https://i.ytimg.com/vi/rO0gKGMMzIw/sddefault.jpg)
+
 # Middleware 
 Lo usaremos para la canalización de solicitudes HTTP. Lo ejecutaremos en cada solicitud para el manejo de las excepciones que se pueden dar dentro de la aplicación.
 
 # Swagger RecDoc
 Este framework se usara para la documentación de los endpoint del API, ingresando a la sigiente ruta [/healthchecks-ui](https://localhost:7008/api-docs).
 
+# Pasos para levantar el proyecto localmente.
 
+- Tener Visual Studio 2022 con la version de .Net 8
+- Tener instalado el motor de Base de Datos SQL Server Developer
+- Primero deberan instalar Entity Framework en su PC, para esto correremos el siguiente comando desde powershell `dotnet tool install --global dotnet-ef`
+- En el caso ya se tenga instalado Entity Framework correr el siguiente comando desde powershell  `dotnet tool update --global dotnet-ef`
+- Posterior crearemos la base de datos y la tabla con los siguientes comandos desde powershell 
+```
+dotnet ef migrations add CreateInitialScheme --project Tekton.Persistence --startup-project Tekton.Service.WebApi --output-dir Migrations --context ApplicationDbContext
+dotnet ef database update --project Tekton.Persistence --startup-project Tekton.Service.WebApi --context ApplicationDbContext
+
+```
+- Luego abriremos la solución y iniciaremos el proyecto.

@@ -1,7 +1,10 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Tekton.Application.UseCases.Common.Behaviors;
+using Tekton.Application.UseCases.Products.Commands.CreateProductCommand;
+using Tekton.Application.UseCases.Products.Commands.UpdateProductCommand;
 
 namespace Tekton.Application.UseCases
 {
@@ -16,6 +19,8 @@ namespace Tekton.Application.UseCases
             });
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
+            services.AddScoped<IValidator<CreateProductCommand>, CreateProductCommandValidator>();
+            services.AddScoped<IValidator<UpdateProductCommand>, UpdateProductCommandValidator>();
             return services;
         }
     }
